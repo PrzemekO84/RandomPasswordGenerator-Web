@@ -1,0 +1,65 @@
+/* Colors */
+.first-color { 
+	background: #000000; 
+}
+	
+.second-color { 
+	background: #3e3636; 
+}
+
+.third-color { 
+	background: #d72323; 
+}
+
+.fourth-color { 
+	background: #f5eded; 
+}
+/* Colors */
+
+
+body{
+    background-color: #3e3636;
+    color:#f5eded
+}
+
+/* Header */
+
+header{
+    text-align: center;
+    margin: auto;
+    width: 80vh;
+    border: 2px solid #000000;
+    box-shadow: 5px 5px 10px #f5eded,
+    -5px -5px 10px #000000;
+    padding-bottom: 15px;
+    margin-top: 15px
+}
+
+header h1{
+    font-size: 2.5em;
+    display: inline-block;
+    padding: 8px;
+    color: #f5eded;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px #f5eded,
+    -5px -5px 10px #000000;
+    text-shadow: 4px 4px 10px #000000,
+    -4px -4px 10px #000000;
+    margin-bottom: 10px;
+}
+
+header p{
+    font-size: 1.4em;
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 3px;
+}
+
+header label, input{
+    font-size: 1.4em;
+}
+
+/* Todo fajnie zeby kazda opcja wyobru znakow miala swoj border
+bo bedzie to lepiej widoczne */
