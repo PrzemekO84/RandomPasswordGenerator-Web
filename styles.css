@@ -41,7 +41,7 @@ header h1{
     padding: 8px;
     color: #f5eded;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 5px 5px 10px #f5eded,
     -5px -5px 10px #000000;
     text-shadow: 4px 4px 10px #000000,
@@ -50,7 +50,7 @@ header h1{
 }
 
 header p{
-    font-size: 1.4em;
+    font-size: 1.6em;
     width: 70%;
     margin: auto;
     padding: 10px;
@@ -59,6 +59,45 @@ header p{
 
 header label, input{
     font-size: 1.4em;
+    cursor: pointer;
+}
+
+.inputContainer{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 3px 3px 10px #f5eded,
+    -3px -3px 10px #000000;
+    text-shadow: 4px 4px 10px #000000,
+    -4px -4px 10px #000000;
+    margin-right: 5px;
+    padding: 5px;
+    padding-right: 10px;
+    transition: border-color ease 0.7s;
+}
+
+.inputContainer:hover{
+    border-color: hsl(0, 29%, 85%);
+}
+
+#passwordLength{
+    width: 150px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #f5eded;
+    border: none;
+    cursor:auto;
+}
+
+#createPassword{
+    font-size: 1.4em;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #f5eded;
 }
 
 /* Todo fajnie zeby kazda opcja wyobru znakow miala swoj border
