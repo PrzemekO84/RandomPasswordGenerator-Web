@@ -47,6 +47,11 @@ header h1{
     text-shadow: 4px 4px 10px #000000,
     -4px -4px 10px #000000;
     margin-bottom: 10px;
+    transition: color ease 1s;
+}
+
+header h1:hover{
+    color:#d72323
 }
 
 header p{
@@ -93,12 +98,22 @@ header label, input{
 
 #createPassword{
     font-size: 1.4em;
-    border: none;
-    border-radius: 5px;
+    border: 6px solid #3e3636;
+    border-radius: 10px;
     padding: 5px;
     cursor: pointer;
-    background-color: #f5eded;
+    background-color: #3e3636;
+    box-shadow: 3px 3px 10px #f5eded,
+    -5px -5px 10px #000000;
+    text-shadow: 4px 4px 10px #000000,
+    -4px -4px 10px #000000;
+    color: #f5eded;
+    margin-top: 2px;
+    transition: color ease 1s;
 }
 
-/* Todo fajnie zeby kazda opcja wyobru znakow miala swoj border
-bo bedzie to lepiej widoczne */
+#createPassword:hover{
+    color: #d72323;
+}
+
+
