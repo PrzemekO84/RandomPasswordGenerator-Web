@@ -10,29 +10,65 @@ const characters = document.getElementById("characters");
 const passwordLength = document.getElementById("passwordLength");
 const createPassword = document.getElementById("createPassword");
 const result = document.getElementById("result");
-const saveToClipBoard = document.getElementById("saveToClipBoard");
+const saveToClipboard = document.getElementById("saveToClipboard");
+
+//Main Function
 
 function generateRandomPassword(){
-
     const password = [];
 
-    const passwordLengthValue = passwordLength.value;
-    const passwordLengthNumber = Number(passwordLengthValue);
+    const passwordLengthNumber = Number(passwordLength.value);
 
-    console.log(typeof passwordLengthNumber);
+    const charactersArray = createCharArray();
+    const joinedCharacters = charactersArray.join("");
 
-    if(letter.checked){
-        password.push(randomLetters)
-    }
-    if(numbers.checked){
-        password.push(randomNumbers)
-    }
-    if(characters.checked){
-        password.push(randomCharacters)
+    const shuffeldCharacters = shuffle(joinedCharacters.split("")).join("");
+
+    for(let i = 0; i < passwordLengthNumber; i++){
+        const randomPosition = Math.floor(Math.random() * shuffeldCharacters.length);
+        password.push(shuffeldCharacters[randomPosition]);
     }
 
-    console.log(password.join(""));
+    saveToClipboard.style.display = ""
+    document.getElementById("footer").style.display = "block";
+    result.textContent = `Your password is: ${password.join("")}`
 }
 
+//Create Characters Array
+
+function createCharArray(){
+    const charactersArray = [];
+
+    if(letter.checked){
+        charactersArray.push(randomLetters); 
+    }
+    if(numbers.checked){
+        charactersArray.push(randomNumbers);
+    }
+    if(characters.checked){
+        charactersArray.push(randomCharacters);
+    }
+
+    if(charactersArray.length === 0){
+
+        document.getElementById("footer").style.display = "block";
+        saveToClipboard.style.display = "none"
+
+        return result.textContent = `Please choose at least one type
+        of charcaters for you password`;
+    }
+
+    return charactersArray;
+}
+
+//Shuffle function
+
+function shuffle(array){
+    for(let i = array.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i+1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 createPassword.onclick = generateRandomPassword;

@@ -6,7 +6,6 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/5582/5582931.png">
-    <script src="https://cdn.jsdelivr.net/npm/chance"></script>
 </head>
 <body>
 
@@ -18,17 +17,17 @@
         <p>Please choose what characters would you like to have in your password</p>
 
         <div class="inputContainer">
-            <input id="letters" type="radio">
+            <input id="letters" type="checkbox">
             <label for="letters">Letters</label>
         </div>
         
         <div class="inputContainer">
-            <input id="numbers" type="radio">
+            <input id="numbers" type="checkbox">
             <label for="numbers">Numbers</label>
         </div>
         
         <div class="inputContainer">
-            <input id="characters" type="radio">
+            <input id="characters" type="checkbox">
             <label for="characters">Characters</label>
         </div>
         
@@ -40,9 +39,12 @@
         <button id="createPassword">Create password!</button>
     </Header>
 
-    <footer>
-        <p id="result"></p>
-        <p id="saveToClipBoard"></p>
+    <footer id="footer">
+        <div class="center">
+            <p id="result"></p>
+            <label for="saveToClipboard"></label>
+            <button id="saveToClipboard">Save to clipboard!</button>
+        </div>
     </footer>
     
     
