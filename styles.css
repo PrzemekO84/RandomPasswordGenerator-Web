@@ -61,7 +61,9 @@ header p{
     padding: 10px;
     margin-bottom: 3px;
 }
+/* Header */
 
+/* Inputs */
 header label, input{
     font-size: 1.4em;
     cursor: pointer;
@@ -87,6 +89,39 @@ header label, input{
     border-color: hsl(0, 29%, 85%);
 }
 
+/* Checkbox */
+
+.inputContainer input[type="checkbox"] {
+    display: none; /* Hide the default checkbox */
+}
+
+.inputContainer input[type="checkbox"] + label:before {
+    content: ""; /* Create a pseudo-element for the checkbox */
+    display: inline-block;
+    width: 12px; 
+    height: 12px;
+    border: 1px solid #ccc; 
+    background-color: #f5eded;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Style the custom checkbox when checked */
+.inputContainer input[type="checkbox"]:checked + label:before {
+    background-color: #000000;
+    content: "\2713"; /* Unicode check mark character */
+    text-align: center; 
+    font-size: 14px; 
+    line-height: 15px; /* Match line height with height */
+    color: #f5eded; 
+    font-weight: bold;
+}
+
+/* Checkbox */
+
+/* Inputs */
+
+/* PasswordLength */
 #passwordLength{
     width: 150px;
     text-align: center;
@@ -98,7 +133,7 @@ header label, input{
 
 #createPassword{
     font-size: 1.4em;
-    border: 6px solid #3e3636;
+    border: 1px solid #3e3636;
     border-radius: 10px;
     padding: 5px;
     cursor: pointer;
@@ -109,11 +144,15 @@ header label, input{
     -4px -4px 10px #000000;
     color: #f5eded;
     margin-top: 2px;
-    transition: color ease 1s;
+    transition: color ease 1s,
+    border-color ease 1s;
 }
 
 #createPassword:hover{
     color: #d72323;
+    border-color: #f5eded;
 }
+
+/* Password Length */
 
 
