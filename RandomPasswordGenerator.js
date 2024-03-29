@@ -19,10 +19,25 @@ function generateRandomPassword(){
 
     const passwordLengthNumber = Number(passwordLength.value);
 
+    // if(passwordLengthNumber !== "number"){
+    //     return result.textContent = "Please use numbers for password length."
+    // }
+
     const charactersArray = createCharArray();
     const joinedCharacters = charactersArray.join("");
 
     const shuffeldCharacters = shuffle(joinedCharacters.split("")).join("");
+
+    if(passwordLengthNumber > 30){
+        saveToClipboard.style.display = "none";
+        document.getElementById("footer").style.display = "block";
+        return result.textContent = `Password can not be longer than 30 characters.`;
+    }
+    else if(passwordLengthNumber < 0){
+        saveToClipboard.style.display = "none";
+        document.getElementById("footer").style.display = "block";
+        return result.textContent = `Password have to be a positive number`;
+    }
 
     for(let i = 0; i < passwordLengthNumber; i++){
         const randomPosition = Math.floor(Math.random() * shuffeldCharacters.length);
@@ -52,7 +67,7 @@ function createCharArray(){
     if(charactersArray.length === 0){
 
         document.getElementById("footer").style.display = "block";
-        saveToClipboard.style.display = "none"
+        saveToClipboard.style.display = "none";
 
         return result.textContent = `Please choose at least one type
         of charcaters for you password`;
