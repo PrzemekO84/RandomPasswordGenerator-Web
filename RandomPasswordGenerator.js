@@ -29,9 +29,9 @@ function generateRandomPassword(){
         password.push(shuffeldCharacters[randomPosition]);
     }
 
-    saveToClipboard.style.display = ""
+    saveToClipboard.style.display = "";
     document.getElementById("footer").style.display = "block";
-    result.textContent = `Your password is: ${password.join("")}`
+    result.textContent = `Your password is: ${password.join("")}`;
 }
 
 //Create Characters Array
@@ -70,5 +70,16 @@ function shuffle(array){
     }
     return array;
 }
+
+saveToClipboard.onclick = function() {
+    const passwordText = result.textContent.replace("Your password is: ", ""); // Extract password text
+    navigator.clipboard.writeText(passwordText)
+        .then(() => {
+            alert("Password copied to clipboard!");
+        })
+        .catch((err) => {
+            console.error('Failed to copy: ', err);
+        });
+};
 
 createPassword.onclick = generateRandomPassword;
